@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minecraft Christmas Scene</title>
+    <style>
+        body { margin: 0; overflow: hidden; font-family: 'Segoe UI', Arial, sans-serif; }
+
+        #controls-info {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 15px 20px;
+            border-radius: 10px;
+            font-size: 14px;
+            z-index: 1000;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        #controls-info h3 {
+            margin: 0 0 10px 0;
+            color: #ffff00;
+            font-size: 16px;
+        }
+
+        #controls-info .key {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 2px 8px;
+            border-radius: 4px;
+            margin-right: 5px;
+            font-family: monospace;
+            font-weight: bold;
+        }
+
+        #controls-info .row {
+            margin: 5px 0;
+        }
+
+        #speed-indicator {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 10px 15px;
+            border-radius: 10px;
+            font-size: 14px;
+            z-index: 1000;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        #speed-bar {
+            width: 100px;
+            height: 8px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 4px;
+            margin-top: 5px;
+            overflow: hidden;
+        }
+
+        #speed-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #00ff00, #ffff00, #ff0000);
+            width: 37.5%;
+            transition: width 0.1s;
+        }
+    </style>
+</head>
+<body>
+    <div id="controls-info">
+        <h3>Papierflieger-Steuerung</h3>
+        <div class="row"><span class="key">W</span> Beschleunigen</div>
+        <div class="row"><span class="key">S</span> Bremsen</div>
+        <div class="row"><span class="key">A</span> Links</div>
+        <div class="row"><span class="key">D</span> Rechts</div>
+        <div class="row"><span class="key">Space</span> Steigen</div>
+        <div class="row"><span class="key">Shift</span> Sinken</div>
+        <div class="row"><span class="key">F</span> Kamera-Modus</div>
+    </div>
+
+    <div id="speed-indicator">
+        <div>Geschwindigkeit</div>
+        <div id="speed-bar">
+            <div id="speed-fill"></div>
+        </div>
+    </div>
+
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+                "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+            }
+        }
+    </script>
+
+    <script type="module" src="./main.js"></script>
+</body>
+</html>
